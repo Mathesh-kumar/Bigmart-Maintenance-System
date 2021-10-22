@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIG-Mart</title>
+
+    <link rel="stylesheet" href="../static/css/landingpage-styles.css" />
+
+    <!-- Box icons CDN -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="login" class="modal animate">
+      <span onclick="closeModal()" class="close"> &times; </span>
+      <div class="login-container">
+        <img src="../static/images/login.png" alt="" class="login-image" />
+        <div id="login-component" class="login-component">
+          <div class="login-title"><h3>Log In</h3></div>
+          <form action="/login" class="login-form" method="post">
+            <div class="login-inner-container">
+              <i class="bx bx-user"></i>
+              <input
+                type="text"
+                placeholder="Enter Username"
+                name="uname"
+                required
+              />
+            </div>
+            <div class="login-inner-container">
+              <i class="bx bx-lock"></i>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                name="psw"
+                required
+              />
+            </div>
+            <br />
+            <div class="login-button"><button type="submit">Login</button></div>
+          </form>
+          <div class="new-user-register">
+            <span class="register">New user? Click here to register.</span>
+          </div>
+        </div>
+        <div id="register-component" class="register-component">
+          <div class="login-title"><h3>Register</h3></div>
+          <form action="/register" class="login-form" method="POST">
+            <div class="login-inner-container">
+              <i class="bx bx-mail-send"></i>
+              <input
+                type="mail"
+                placeholder="Enter mail"
+                name="mail"
+                required
+              />
+            </div>
+            <div class="login-inner-container">
+              <i class="bx bx-user"></i>
+              <input
+                type="text"
+                placeholder="Enter Username"
+                name="uname"
+                required
+              />
+            </div>
+            <div class="login-inner-container">
+              <i class="bx bx-lock"></i>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                name="psw"
+                required
+              />
+            </div>
+            <br />
+            <div class="login-button">
+              <button type="submit">Register</button>
+            </div>
+          </form>
+          <div class="new-user-register">
+            <span class="goto-login"
+              >Registered user? Click here to Login.</span
+            >
+          </div>
+        </div>
+
+        {% if register_success_modal %}
+        <style>
+          #login {
+            display: block;
+          }
+          .content {
+            filter: blur(3px);
+          }
+          .register-success-component {
+            display: block;
+          }
+          .login-failure-component,
+          .register-failure-component,
+          .login-component,
+          .register-component {
+            display: none;
+          }
+        </style>
+        {% endif %} {% if register_failure_modal %}
+        <style>
+          #login {
+            display: block;
+          }
+          .content {
+            filter: blur(3px);
+          }
+          .register-failure-component {
+            display: block;
+          }
+          .login-failure-component,
+          .register-success-component,
+          .login-component,
+          .register-component {
+            display: none;
+          }
+        </style>
+        {% endif %} {% if login_failure_modal %}
+        <style>
+          #login {
+            display: block;
+          }
+          .content {
+            filter: blur(3px);
+          }
+          .login-failure-component {
+            display: block;
+          }
+          .register-success-component,
+          .register-failure-component,
+          .login-component,
+          .register-component {
+            display: none;
+          }
+        </style>
+        {% endif %}
+
+        <div class="login-failure-component">
+          <div class="login-title"><h3>Login Failed</h3></div>
+          <div class="register-inner">
+            <img src="../static/images/failure.png" alt="" width="50%" />
+          </div>
+          <p>Invalid email or password. Please try again!</p>
+          <div class="new-user-register-success">
+            <span class="success-login">Click here to Login!</span>
+          </div>
+        </div>
+
+        <div class="register-success-component">
+          <div class="login-title"><h3>Registration Successful</h3></div>
+          <div class="register-inner">
+            <img src="../static/images/success.png" alt="" width="50%" />
+          </div>
+          <div class="new-user-register-success">
+            <span class="success-register">Click here to Login!</span>
+          </div>
+        </div>
+
+        <div class="register-failure-component">
+          <div class="login-title"><h3>Registration Failed</h3></div>
+          <div class="register-inner">
+            <img src="../static/images/redcross.png" alt="" width="50%" />
+            <p>Email id already registered. Try again with different email.</p>
+          </div>
+          <div class="new-user-register-failure">
+            <span class="failure-register">Click here to register again!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <header class="navbar">
+        <a href="#intro" class="logo">
+          <i class="bx bx-cart icon"></i>
+          <div class="logo-name">BIG-Mart</div>
+        </a>
+        <div class="nav-links">
+          <a href="#intro" class="home-content">
+            <i class="bx bx-home"></i>
+            <div class="home">Home</div>
+          </a>
+          <a href="#endline1" class="about-content">
+            <i class="bx bx-info-circle"></i>
+            <div class="about">About</div>
+          </a>
+          <a href="#endline2" class="contact-content">
+            <i class="bx bx-phone"></i>
+            <div class="contact">Contact</div>
+          </a>
+          <a class="login-content">
+            <i class="bx bx-user"></i>
+            <div class="login">Login</div>
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <div class="intro" id="intro">
+          <div class="intro-content">
+            <h1>BIG-Mart Shopping</h1>
+            <p>Products at your door step.</p>
+          </div>
+          <div class="intro-image">
+            <img src="../static/images/main-main.png" alt="" />
+          </div>
+        </div>
+
+        <div id="endline1" class="endline">
+          <img
+            class="endline-image"
+            src="../static/images/endline2.png"
+            alt=""
+          />
+        </div>
+
+        <div class="abt" id="abt">
+          <div class="abt-header">
+            <h3>Our Success!</h3>
+            <p>Good Friends; Good Shopping; Good Times</p>
+          </div>
+          <div class="abt-content">
+            <div class="abt-content-inner">
+              <div class="abt-content-header">
+                <i class="bx bx-history"></i>
+                <h4>Long History</h4>
+              </div>
+              <p>
+                Big Mart is the leading grocery store and departmental store
+                that has been doing a wholesale business at LA for more than 20
+                years. Our goal is to prosper with our customers.
+              </p>
+            </div>
+            <div class="abt-content-inner">
+              <div class="abt-content-header">
+                <i class="bx bx-briefcase"></i>
+                <h4>Big Save</h4>
+              </div>
+              <p>
+                Our goal is to prosper with our customers. Big Mart is an one
+                stop shopping center. We focus on wholesale for retailers and we
+                also help on line sellers buy merchandise at cheapest price.
+              </p>
+            </div>
+            <div class="abt-content-inner">
+              <div class="abt-content-header">
+                <i class="bx bx-accessibility"></i>
+                <h4>Easy Access</h4>
+              </div>
+              <p>
+                It allows you to walk away from the drudgery of shopping &
+                welcome an easy relaxed way of browsing & shopping. Easy access
+                to bigmart.com via ​Google, Bing, Yahoo, Facebook, Linkedin.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="endline2" class="endline">
+          <img
+            class="endline-image"
+            src="../static/images/endline2.png"
+            alt=""
+          />
+        </div>
+      </main>
+
+      <footer class="contact-info" id="contact-info">
+        <div>
+          <img
+            src="../static/images/warehouse2.jpg"
+            alt=""
+            class="contact-info-image"
+          />
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info-content">
+            <h3>Our Address</h3>
+            <div>
+              7/35, Los Angeles, CA<br />
+              LA Street, Boston<br />
+              United States of America<br />
+
+              <div class="contact-info-align">
+                <i class="bx bx-phone"></i>
+                <span> Tel: +837 4521 9838</span>
+              </div>
+
+              <div class="contact-info-align">
+                <i class="bx bx-printer"></i>
+                <span class="fax">Fax: +867 9645 9461</span><br />
+              </div>
+
+              <div class="contact-info-align">
+                <i class="bx bx-mail-send"></i>
+                Mail: big.mart@gmail.com
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info-links">
+            <h3>Social Media</h3>
+            <div>
+              <i class="bx bxl-google-plus-circle"></i>
+              <i class="bx bxl-facebook-circle"></i>
+              <i class="bx bxl-whatsapp"></i>
+              <i class="bx bxl-twitter"></i>
+              <i class="bx bxl-youtube"></i>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../static/js/landingpage-script.js"></script>
+  </body>
+</html>

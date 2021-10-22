@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #6c757d;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: hsl(0, 0%, 96%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.loader {
+  background: url(../images/loader.gif);
+}
+
+/* navbar css properties */
+
+.navbar {
+  padding: 10px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin: 10px;
+  border-radius: 15px;
+
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.bx {
+  font-size: 2rem;
+  padding-right: 5px;
+}
+
+.logo-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 5px;
+  color: black;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.3rem;
+
+  width: 40%;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+.nav-links a:hover div,
+.nav-links a:hover i {
+  color: gold;
+  cursor: pointer;
+}
+
+.home-content,
+.about-content,
+.contact-content,
+.login-content {
+  display: flex;
+  flex-direction: row;
+}
+
+/* login form css properties */
+
+.login-image {
+  border-radius: 10px;
+}
+
+.modal {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  width: 70%;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+
+  top: 10%;
+  left: 15%;
+}
+
+.close {
+  /* position: inherit; */
+  /* right: 25px; */
+  /* top: 0; */
+  width: 100%;
+  /* text-align: right; */
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.login-container {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.login-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 80px;
+
+  display: block;
+}
+
+.register-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 80px;
+
+  display: none;
+}
+
+.login-failure-component,
+.register-failure-component,
+.register-success-component {
+  display: none;
+  text-align: center;
+}
+
+.register-inner {
+  padding-top: 20px;
+}
+
+.success-login:hover,
+.failure-register:hover,
+.success-register:hover {
+  cursor: pointer;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  font-size: 1.3rem;
+}
+
+.login-form input {
+  border: 0px solid;
+  border-bottom: 1px solid #6c757d;
+  padding: 5px 5px;
+
+  font-size: 1rem;
+}
+
+.login-form input:focus {
+  outline: none;
+}
+
+.login-inner-container {
+  display: flex;
+  margin: 20px 0px;
+}
+
+.login-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-button button {
+  padding: 5px 10px;
+}
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.new-user-register {
+  margin: 20px 0px;
+  text-align: center;
+}
+
+.new-user-register:hover {
+  cursor: pointer;
+}
+
+/* main css properties */
+main {
+  padding: 0px 20px;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.intro-content {
+  padding-left: 20px;
+  font-size: 1.5rem;
+}
+
+.endline {
+  display: flex;
+  justify-content: space-around;
+}
+
+.endline-image {
+  width: 30%;
+}
+
+.abt {
+  /* padding-left: 40px; */
+  padding-bottom: 80px;
+}
+
+.abt-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.5rem;
+}
+
+.abt-content {
+  display: flex;
+  padding-top: 40px;
+  justify-content: space-around;
+
+  font-size: 1.5rem;
+}
+
+.abt-content-inner {
+  text-align: justify;
+  width: 30%;
+}
+
+.abt-content-header {
+  display: flex;
+}
+
+.abt-content-header h4 {
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+/* .abt h1 {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.abt-content {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.about-bigmart {
+  display: flex;
+  align-items: center;
+  text-align: justify;
+
+  padding-right: 20px;
+} */
+
+/* .abt-content-image {
+  width: 900px;
+  height: 500px;
+} */
+
+/* footer css properties */
+
+.contact-info {
+  padding: 10px 10px 70px 10px;
+  /* background-color: white; */
+
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.contact-info-image {
+  width: 500px;
+  height: 300px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 50px;
+  width: 60%;
+}
+
+.contact-info-content {
+  font-size: 1.3rem;
+  /* padding-top: 30px;
+  padding-left: 70px; */
+}
+
+.contact-info-align {
+  display: flex;
+  align-items: end;
+  padding-top: 3px;
+}
+
+.contact-info-links {
+  font-size: 1.3rem;
+  padding-right: 50px;
+}
+
+.contact-info-links h3 {
+  text-align: center;
+}
