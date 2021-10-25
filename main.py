@@ -47,7 +47,14 @@ def register():
     cMailId = request.form['mail']
     cName = request.form['uname']
     cPassword = request.form['psw']
-    userData = dict(cMailId=cMailId, cName=cName, cPassword=cPassword, cIsAdmin="False")
+    cContactNo = request.form['mobileno']
+    cAddress = request.form['address']
+    
+    cImage = request.files['image']
+    path = os.path.join('D:\My_Projects\Bigmart-Maintenance-System\static\images', cImage.filename)
+    cImage.save(path)
+    
+    userData = dict(cMailId=cMailId, cName=cName, cPassword=cPassword, cContactNo=cContactNo, cAddress=cAddress, cImage=cImage.filename, cIsAdmin="False")
     
     try:
         userRegister = user_mongo.user_registration(client, userData)

@@ -49,7 +49,12 @@
         </div>
         <div id="register-component" class="register-component">
           <div class="login-title"><h3>Register</h3></div>
-          <form action="/register" class="login-form" method="POST">
+          <form
+            action="/register"
+            class="login-form"
+            method="POST"
+            enctype="multipart/form-data"
+          >
             <div class="login-inner-container">
               <i class="bx bx-mail-send"></i>
               <input
@@ -74,6 +79,33 @@
                 type="password"
                 placeholder="Enter Password"
                 name="psw"
+                required
+              />
+            </div>
+            <div class="login-inner-container">
+              <i class="bx bx-phone"></i>
+              <input
+                type="text"
+                placeholder="Enter Mobile No"
+                name="mobileno"
+                required
+              />
+            </div>
+            <div class="login-inner-container">
+              <i class="bx bxs-edit-location"></i>
+              <input
+                type="text"
+                placeholder="Enter Address"
+                name="address"
+                required
+              />
+            </div>
+            <div class="login-inner-container">
+              <i class="bx bx-image"></i>
+              <input
+                type="file"
+                name="image"
+                placeholder="Upload your image"
                 required
               />
             </div>
