@@ -8,7 +8,8 @@ closeBtn.addEventListener("click", () => {
 });
 
 
-
+console.log(chartOneData1)
+// console.log(chartOneData2)
 
 // chart 1
 

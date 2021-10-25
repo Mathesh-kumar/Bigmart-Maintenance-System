@@ -36,6 +36,9 @@ def admin_pages(pagename):
     elif pagename == "customers":
         customers = admin_mongo.customers(client)
         return render_template('customers.html', customers=customers)
+    elif pagename == "analytics":
+        analyticsResult = admin_mongo.analytics_result(client)
+        return render_template('analytics.html', analyticsResult=jsonify(analyticsResult))
 
 @app.route('/user/<pagename>', methods=['GET'])
 def user_pages(pagename):
@@ -162,6 +165,12 @@ def product_purchase(pName):
     pCount = request.form['count']
     purchaseDetails = admin_mongo.product_purchase(client, pName, pCount)
     return render_template('purchaseproducts.html', purchaseDetails=purchaseDetails, productDetails="1")
+
+@app.route('/analytics', methods=['GET'])
+def analytics():
+    analyticsResult = admin_mongo.analytics_result(client)
+    return render_template('analytics.html', analyticsResult=jsonify(analyticsResult))
+
 
 if __name__ == '__main__':
     client = open_credential()

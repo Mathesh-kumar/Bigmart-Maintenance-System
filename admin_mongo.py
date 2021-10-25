@@ -117,3 +117,14 @@ def dashboard_results(client):
     dbResults['totalCustomers'] = str(len(customers))
 
     return dbResults
+
+def analytics_result(client):
+    database = client['bigmart']
+    productsCollection = database['products']
+    products = list(productsCollection.find({}))
+    chartOne = [[], []]
+    for i in products:
+        chartOne[0].append(i['pName'])
+        chartOne[1].append(i['pStock'])
+    print(chartOne)
+    return chartOne
