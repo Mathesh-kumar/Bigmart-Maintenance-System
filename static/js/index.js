@@ -21,9 +21,10 @@ document
   });
 
 // modal = document.getElementById("login");
-// window.onclick = function (event) {
+// document.onclick = function (event) {
 //   if (event.target == modal) {
-//     modal.style.display = "none";
+//   console.log("clicked..");
+//   modal.style.display = "none";
 //   }
 // };
 

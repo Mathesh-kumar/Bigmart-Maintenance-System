@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIG-Mart</title>
+
+    <link rel="stylesheet" href="../static/css/purchaseproducts.css" />
+
+    <!-- Box icons CDN -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="loader"><img src="../static/images/loader.gif" /></div>
+
+    <aside class="sidebar content">
+      <div class="logo-details">
+        <i class="bx bx-cart icon"></i>
+        <div class="logo-name">BIG-Mart</div>
+        <i class="bx bx-menu icon icon-menu" id="close-btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="#">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links-name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-notification"></i>
+            <span class="links-name">Notifications</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links-name">Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a href="/user/userproducts">
+            <i class="bx bxl-product-hunt"></i>
+            <span class="links-name">Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links-name">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <nav class="navbar">
+        <div class="navbar-right">
+          <div class="notify-mail">
+            <i class="bx bxs-bell"></i>
+            <i class="bx bxs-message-detail"></i>
+          </div>
+          <div class="login-profile">
+            <img
+              src="../static/images/mk.png"
+              alt="profile-image"
+              class="profile-image"
+            />
+            <div class="login-content">
+              <span id="admin-name">Matheshkumar P</span>
+              <span>User</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <div class="banner">
+          <div class="banner-in banner-left-content">
+            <h1>Our Products</h1>
+          </div>
+        </div>
+
+        {% if purchaseDetails=="1" %}
+        <div class="product">
+          <div class="product-title">
+            <h1>{{productDetails['pCategory']}}</h1>
+          </div>
+          <div class="product-details">
+            <div class="details-image">
+              <img
+                src="../static/images/{{productDetails['pImage']}}"
+                alt=""
+                class="product-image"
+              />
+            </div>
+            <form
+              action="/purchaseproduct/{{productDetails['pName']}}"
+              method="post"
+              class="about-product-form"
+            >
+              <div class="details">
+                <div class="each-details">
+                  <div class="details-title-inner">
+                    <i class="bx bxl-product-hunt"></i>
+                    <p>Name</p>
+                  </div>
+                  <div class="details-value">
+                    <p>{{productDetails['pName']}}</p>
+                  </div>
+                </div>
+                <div class="each-details">
+                  <div class="details-title-inner">
+                    <i class="bx bx-spreadsheet"></i>
+                    <p>Stock</p>
+                  </div>
+                  <div class="details-value">
+                    <p>{{productDetails['pStock']}}</p>
+                  </div>
+                </div>
+                <div class="each-details">
+                  <div class="details-title-inner">
+                    <i class="bx bx-rupee"></i>
+                    <p>Price</p>
+                  </div>
+                  <div class="details-value">
+                    <p>{{productDetails['pPrice']}}</p>
+                  </div>
+                </div>
+                <div class="each-details">
+                  <div class="details-title-inner">
+                    <i class="bx bx-notepad"></i>
+                    <p>Description</p>
+                  </div>
+                  <div class="details-value">
+                    <p>{{productDetails['pDescription']}}</p>
+                  </div>
+                </div>
+                <div class="each-details">
+                  <div class="modify-button details-value">
+                    <input
+                      type="number"
+                      placeholder="Enter Count"
+                      name="count"
+                      required
+                    />
+                  </div>
+                  <div class="delete-button details-title-inner">
+                    <button type="submit">Purchase</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        {% elif productDetails=="1" %} {% if purchaseDetails %}
+        <div class="purchase-results">
+          <div class="result-heading">
+            <h1>Purchase Success</h1>
+          </div>
+          <div class="result-image">
+            <img src="../static/images/redtick.png" alt="" class="res-image" />
+          </div>
+          <div class="result-message">
+            <p>
+              Thanks for your purchase 👍. Happy shopping 🌟and visit again.
+            </p>
+          </div>
+        </div>
+        {% else %}
+        <div class="purchase-results">
+          <div class="result-heading">
+            <h1>Purchase Failure</h1>
+          </div>
+          <div class="result-image">
+            <img src="../static/images/redcross.png" alt="" class="res-image" />
+          </div>
+          <div class="result-message">
+            <p>
+              We have not that much amount of stock right now 😔. Please be
+              patient till refill. Thanks for your purchase 👍.
+            </p>
+          </div>
+        </div>
+        {% endif %} {% endif %}
+      </main>
+    </section>
+
+    <!-- script -->
+    <script src="../static/js/purchaseproducts.js"></script>
+
+    <!-- JQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      window.onload = function () {
+        setTimeout(function () {
+          // display loader on page load and fade out after page is loaded
+          $(".loader").fadeOut(1000);
+        }, 1000);
+      };
+    </script>
+  </body>
+</html>

@@ -100,7 +100,7 @@ body {
   padding: 40px;
   border-radius: 20px;
 
-  top: 10%;
+  top: 5%;
   left: 15%;
 }
 
@@ -162,8 +162,10 @@ body {
 
 .success-login:hover,
 .failure-register:hover,
-.success-register:hover {
+.success-register:hover,
+.failure-login:hover {
   cursor: pointer;
+  color: gold;
 }
 
 .login-title {

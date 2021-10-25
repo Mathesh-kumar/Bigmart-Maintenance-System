@@ -1,11 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+/* css properties for entire page */
+
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   font-family: "Poppins", sans-serif;
   color: #6c757d;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+label {
+  font-size: 1.1rem;
 }
 
 html {
@@ -15,6 +25,8 @@ html {
 body {
   display: flex;
 }
+
+/* loader css properties*/
 
 .loader {
   position: fixed;
@@ -91,6 +103,8 @@ section {
   align-items: flex-start;
 }
 
+/* navbar css properties */
+
 .navbar {
   position: sticky;
   height: 66px;
@@ -141,13 +155,15 @@ section {
   background-color: hsl(0, 0%, 96%);
 }
 
+/* banner css properties */
+
 .banner {
-  min-height: 150px;
+  min-height: 50px;
   background-color: lightblue;
   border-radius: 0px 0px 20px 20px;
   display: flex;
   align-items: center;
-  padding: 30px 0px 60px 30px;
+  padding: 20px 0px 20px 30px;
 }
 
 .banner-left-content {
@@ -158,126 +174,78 @@ section {
   font-size: 2rem;
 }
 
-.banner-left-content p,
-.banner-right-content p {
+.banner-left-content p {
   font-size: 1.3rem;
 }
 
-.banner-right-content {
-  width: 30%;
-  display: flex;
-}
+/* product css properties */
 
-.main-container {
-  padding: 0px 20px;
-}
-
-.slider {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: -30px;
-}
-
-.slider-in {
-  background-color: white;
-  width: 30%;
-  padding: 20px;
-  border-radius: 10px;
-  display: flex;
-}
-
-.slider-image {
-  width: 50px;
-  height: 50px;
-  background-color: dimgray;
-  border-radius: 50px;
-}
-
-.slider-content {
+.product {
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
 }
 
-.slider-amount {
-  font-size: 1.5rem;
-  color: black;
-}
-
-.main-body {
+.product-title {
   display: flex;
+  justify-content: center;
+  align-items: center;
 
-  margin-top: 25px;
-  justify-content: space-between;
+  padding: 20px;
 }
 
-.main-left {
+.product-title h1 {
+  font-size: 2rem;
+}
+
+.product-details {
+  display: flex;
+  margin: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.product-image {
+  width: 400px;
+  height: 400px;
+
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+
+  width: 700px;
+}
+
+.each-details {
+  display: flex;
+}
+
+.details-title-inner {
+  display: flex;
+  padding: 10px 0px;
+  width: 40%;
+}
+
+.details-value {
   width: 60%;
+  padding: 10px 0px;
 }
 
-.main-right {
-  width: 37%;
+.details-value input,
+#txtArea {
+  border: 0px solid;
+  border-bottom: 1px solid #6c757d;
+  border-radius: 5px;
+  padding: 5px 5px;
+
+  font-size: 1.3rem;
 }
 
-.graph1 {
-  min-height: 350px;
-  padding: 20px;
-
-  background-color: white;
-  border-radius: 10px;
-}
-
-.graph2 {
-  min-height: 750px;
-  padding: 20px;
-
-  background-color: white;
-  border-radius: 10px;
-}
-
-.graph3 {
-  margin-top: 25px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.graph3-1,
-.graph3-2 {
-  min-height: 350px;
-  padding: 20px;
-
-  background-color: white;
-  border-radius: 10px;
-  width: 49%;
-}
-
-.graph4 {
-  min-height: 350px;
-  margin-top: 20px;
-  padding: 20px;
-
-  background-color: white;
-  border-radius: 10px;
-}
-
-.graph5 {
-  min-height: 150px;
-  margin-top: 20px;
-  padding: 20px;
-
-  background-color: white;
-  border-radius: 10px;
-}
-
-/* dummy to be deleted */
-.dummy {
-  padding: 20px;
-}
-
-.dummy p {
-  background-color: white;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 10px;
+.details-value input:focus,
+#txtArea:focus {
+  outline: none;
 }
