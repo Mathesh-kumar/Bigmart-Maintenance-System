@@ -51,7 +51,7 @@ def register():
     cAddress = request.form['address']
     
     cImage = request.files['image']
-    path = os.path.join('D:\My_Projects\Bigmart-Maintenance-System\static\images', cImage.filename)
+    path = os.path.join(r'C:\Users\Abilash\Desktop\SDL\Bigmart-Maintenance-System\static\images', cImage.filename)
     cImage.save(path)
     
     userData = dict(cMailId=cMailId, cName=cName, cPassword=cPassword, cContactNo=cContactNo, cAddress=cAddress, cImage=cImage.filename, cIsAdmin="False")
@@ -97,7 +97,7 @@ def add_product():
     pExpiryDate = request.form['pexpirydate']
 
     addProductData = dict(pName=pName, pCategory=pCategory, pStock=pStock, pPrice=pPrice, pDescription=pDescription, pImage=pImage.filename, pPurchaseDate=pPurchaseDate, pExpiryDate=pExpiryDate)
-    path = os.path.join('D:\My_Projects\Bigmart-Maintenance-System\static\images', pImage.filename)
+    path = os.path.join(r'C:\Users\Abilash\Desktop\SDL\Bigmart-Maintenance-System\static\images', pImage.filename)
     pImage.save(path)
 
     try:
