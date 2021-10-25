@@ -101,7 +101,7 @@
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
       <script>
-        var chartOneData1 = '{{analyticsResult}}';
+        var chartOneData1 = {{analyticsResult | tojson}};
         // var chartOneData2 = '{{analyticsResult[1]}}';
       </script>
       </div>

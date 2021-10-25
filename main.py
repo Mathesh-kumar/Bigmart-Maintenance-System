@@ -4,6 +4,7 @@ import pymongo
 import user_mongo
 import admin_mongo
 import os
+import json
 
 app = Flask(__name__)
 
@@ -38,7 +39,7 @@ def admin_pages(pagename):
         return render_template('customers.html', customers=customers)
     elif pagename == "analytics":
         analyticsResult = admin_mongo.analytics_result(client)
-        return render_template('analytics.html', analyticsResult=jsonify(analyticsResult))
+        return render_template('analytics.html', analyticsResult=json.dumps(analyticsResult))
 
 @app.route('/user/<pagename>', methods=['GET'])
 def user_pages(pagename):
@@ -169,7 +170,7 @@ def product_purchase(pName):
 @app.route('/analytics', methods=['GET'])
 def analytics():
     analyticsResult = admin_mongo.analytics_result(client)
-    return render_template('analytics.html', analyticsResult=jsonify(analyticsResult))
+    return render_template('analytics.html', analyticsResult=json.dumps(analyticsResult))
 
 
 if __name__ == '__main__':
