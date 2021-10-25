@@ -95,52 +95,46 @@
             <p>Announcements</p>
           </div>
         </div>
-        
+
         <div class="main-container">
           <div class="slider">
             <div class="slider-in">
-              <div class="slider-image"></div>
+              <div class="slider-image si-one"></div>
               <div class="slider-content">
                 <span>Total Sales</span>
-                <span class="slider-amount">$1000K</span>
+                <span class="slider-amount">₹ {{dbResults['totalSales']}}</span>
               </div>
             </div>
             <div class="slider-in">
-              <div class="slider-image"></div>
+              <div class="slider-image si-two"></div>
               <div class="slider-content">
                 <span>Total Profit</span>
-                <span class="slider-amount">$500K</span>
+                <span class="slider-amount">₹ 500</span>
               </div>
             </div>
             <div class="slider-in">
-              <div class="slider-image"></div>
+              <div class="slider-image si-three"></div>
               <div class="slider-content">
-                <span>Total Cost</span>
-                <span class="slider-amount">$450K</span>
+                <span>Total Customers</span>
+                <span class="slider-amount"
+                  >{{dbResults['totalCustomers']}}</span
+                >
               </div>
             </div>
           </div>
           <div class="main-body">
             <div class="main-left">
               <div class="graph1">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                  itaque autem culpa! Pariatur quisquam magnam illo deleniti
-                  tempore inventore vel quam, sequi natus officia nihil sint
-                  blanditiis reprehenderit alias. Porro.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                  itaque autem culpa! Pariatur quisquam magnam illo deleniti
-                  tempore inventore vel quam, sequi natus officia nihil sint
-                  blanditiis reprehenderit alias. Porro.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                  itaque autem culpa! Pariatur quisquam magnam illo deleniti
-                  tempore inventore vel quam, sequi natus officia nihil sint
-                  blanditiis reprehenderit alias. Porro.
-                </p>
+                <table>
+                  <tr>
+                    <th>Products</th>
+                    <th>Stock</th>
+                  </tr>
+                  <tr>
+                    <td>Fruits</td>
+                    <td>100</td>
+                  </tr>
+                </table>
               </div>
               <div class="graph3">
                 <div class="graph3-1">

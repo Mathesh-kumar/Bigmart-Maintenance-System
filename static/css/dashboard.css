@@ -190,8 +190,24 @@ section {
 .slider-image {
   width: 50px;
   height: 50px;
-  background-color: dimgray;
+  /* background-color: dimgray; */
+  /* background-image: url("../images/sales.png"); */
+  background-size: cover;
   border-radius: 50px;
+}
+
+.si-one {
+  background-image: url("../images/sales.png");
+}
+
+.si-two {
+  background-image: url("../images/profit.jpg");
+  border: 2px solid black;
+}
+
+.si-three {
+  background-image: url("../images/customers.png");
+  border: 2px solid black;
 }
 
 .slider-content {
@@ -226,6 +242,11 @@ section {
 
   background-color: white;
   border-radius: 10px;
+}
+
+.graph1 table th,
+.graph1 table tr {
+  width: 50%;
 }
 
 .graph2 {

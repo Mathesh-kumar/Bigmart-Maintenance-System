@@ -100,3 +100,20 @@ def product_purchase(client, pName, pCount):
         salesDetails = dict(pId=product['_id'], sDate=todayDate, sQuantity=pCount, sPrice=str(sPrice))
         add_sales_details(client, salesDetails)
         return True
+
+def dashboard_results(client):
+    dbResults = {}
+    database = client['bigmart']
+
+    salesDetails = database['salesdetails']
+    sales = list(salesDetails.find({}))
+    totalSales = 0
+    for i in sales:
+        totalSales = totalSales + int(i['sPrice'])
+    dbResults['totalSales'] = str(totalSales)
+
+    customerDetails = database['customers']
+    customers = list(customerDetails.find({}))
+    dbResults['totalCustomers'] = str(len(customers))
+
+    return dbResults

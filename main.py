@@ -25,7 +25,8 @@ def landing_page():
 @app.route('/<pagename>', methods=['GET'])
 def admin_pages(pagename):
     if pagename == "dashboard":
-        return render_template('dashboard.html')
+        dbResults = admin_mongo.dashboard_results(client)
+        return render_template('dashboard.html', dbResults=dbResults)
     elif pagename == "notification":
         notify = admin_mongo.notification(client)
         return render_template('notification.html', notify=notify)
@@ -76,7 +77,8 @@ def login():
         userLogin, isAdmin = user_mongo.user_login(client,userData)
         print(userLogin, isAdmin)
         if userLogin and isAdmin:
-            return render_template('dashboard.html')
+            dbResults = admin_mongo.dashboard_results(client)
+            return render_template('dashboard.html', dbResults=dbResults)
         elif userLogin:
             product_each = admin_mongo.get_products(client)
             return render_template('userproducts.html', product_each=product_each)
